@@ -7,7 +7,7 @@ const startServer = async () => {
   try {
     broker = createMessageBroker();
     await broker.connectConsumer();
-    await broker.consumeMessage(["order"], false);
+    await broker.consumeMessage(["order"], true);
   } catch (err) {
     logger.error("Error happened: ", err.message);
     if (broker) {
